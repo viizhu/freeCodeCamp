@@ -1,6 +1,7 @@
 /*
 * Return the length of the longest word in the provided sentence.
 * Your response should be a number.
+* * * https://www.freecodecamp.org/challenges/find-the-longest-word-in-a-string
 */
 
 function findLongestWord(str) {
