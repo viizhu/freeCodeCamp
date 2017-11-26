@@ -1,0 +1,106 @@
+<html>
+<head>
+  <title>Random Quote Machine</title>
+  <script>
+    window.onload = newQuote;
+    var quotes = [
+      ["I love you the more in that I believe you had liked me for my own sake and for nothing else.", "John Keats"],
+      ["But man is not made for defeat. A man can be destroyed but not defeated.", "Ernest Hemingway"],
+      ["When you reach the end of your rope, tie a knot in it and hang on", "Franklin D. Roosevelt"],
+      ["There is nothing permanent except change.", "Heraclitus"],
+      ["The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.", "Helen Keller"],
+      ["Keep love in your heart. A life without it is like a sunless garden when the flowers are dead.", "Oscar Wilde"],
+      ["It is during our darkest moments that we must focus to see the light.", "Aristotle"],
+      ["Try to be a rainbow in someone's cloud", "Maya Angelou"]
+    ]
+    function newQuote() {
+      var randNum = Math.floor(Math.random() * (quotes.length));
+
+      document.getElementById("randomQuotes").innerHTML = "<div class=\"quote\">\"" + quotes[randNum][0] + "\"</div><div class=\"footer\"> - " + quotes[randNum][1] + "</div>";
+    }
+  </script>
+
+  <style>
+  @import url('https://fonts.googleapis.com/css?family=Cedarville+Cursive|Raleway');
+
+  body {
+    background-color: #F1E2CB;
+  }
+
+  .container {
+    background-color: #B7A591;
+    margin: 10px auto;
+    padding: 20px;
+    width: 70%;
+    min-height: 200px;
+    text-align: center;
+  }
+
+  .quote {
+      font: 30px 'Cedarville Cursive', cursive;
+    color: #423C62;
+  }
+
+  .footer {
+    text-align: center;
+    padding-left: 100px;
+    font: 20px 'Raleway', sans-serif;
+    color: #281D1B;
+  }
+
+  .left {
+    float: left;
+    width: 350px;
+    text-align: right;
+    padding: 0 10px 0 0;
+    margin: 20px 0 0 0;
+  }
+
+  .right {
+    float: right;
+    width: 350px;
+    text-align: left;
+    padding: 0 0 0 10px;
+    margin: 20px 0 0 0;
+  }
+
+  .clear {
+    clear: left;
+  }
+
+  button {
+    margin: 0;
+    padding: 10px;
+    background-color: #423C62;
+    border: 0;
+    font: 16px 'Raleway', sans-serif;
+    color: #F1E2CB;
+  }
+
+  .fa {
+    color: #423C62;
+    font-size: 40px;
+  }
+</style>
+</head>
+<body>
+
+  <div class="container">
+
+    <div id="randomQuotes">
+
+      <!--quotes here-->
+
+    </div>
+
+    <div class="left">
+      <a href=""><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+    </div><div class="right">
+      <button onclick="newQuote()">New Quote</button>
+    </div>
+    <div class="clear">
+    </div>
+  </div>
+
+</body>
+</html>
