@@ -1,24 +1,33 @@
 <html>
 <head>
   <title>Random Quote Machine</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script>
     window.onload = newQuote;
-    var quotes = [
-      ["I love you the more in that I believe you had liked me for my own sake and for nothing else.", "John Keats"],
-      ["But man is not made for defeat. A man can be destroyed but not defeated.", "Ernest Hemingway"],
-      ["When you reach the end of your rope, tie a knot in it and hang on", "Franklin D. Roosevelt"],
-      ["There is nothing permanent except change.", "Heraclitus"],
-      ["The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.", "Helen Keller"],
-      ["Keep love in your heart. A life without it is like a sunless garden when the flowers are dead.", "Oscar Wilde"],
-      ["It is during our darkest moments that we must focus to see the light.", "Aristotle"],
-      ["Try to be a rainbow in someone's cloud", "Maya Angelou"]
-    ]
-    function newQuote() {
-      var randNum = Math.floor(Math.random() * (quotes.length));
 
-      document.getElementById("randomQuotes").innerHTML = "<div class=\"quote\">\"" + quotes[randNum][0] + "\"</div><div class=\"footer\"> - " + quotes[randNum][1] + "</div>";
+    var quotes = [
+    ["I love you the more in that I believe you had liked me for my own sake and for nothing else.", "John Keats"],
+    ["But man is not made for defeat. A man can be destroyed but not defeated.", "Ernest Hemingway"],
+    ["When you reach the end of your rope, tie a knot in it and hang on", "Franklin D. Roosevelt"],
+    ["There is nothing permanent except change.", "Heraclitus"],
+    ["The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.", "Helen Keller"],
+    ["Keep love in your heart. A life without it is like a sunless garden when the flowers are dead.", "Oscar Wilde"],
+    ["It is during our darkest moments that we must focus to see the light.", "Aristotle"],
+    ["Try to be a rainbow in someone's cloud", "Maya Angelou"]
+    ]
+
+    function newQuote() {
+    var randNum = Math.floor(Math.random() * (quotes.length));
+
+    document.getElementById("randomQuotes").innerHTML = "<div class=\"quote\">\"" + quotes[randNum][0] + "\"</div><div class=\"footer\"> - " + quotes[randNum][1] + "</div>";
     }
+
+    $("#tweet").click(function() {
+    var x = $("#randomQuotes").text();
+    window.open("https://twitter.com/intent/tweet?text=" + x);
+    });
   </script>
+  <script src="https://use.fontawesome.com/84ab6100da.js"></script>
 
   <style>
   @import url('https://fonts.googleapis.com/css?family=Cedarville+Cursive|Raleway');
@@ -87,20 +96,14 @@
 
   <div class="container">
 
-    <div id="randomQuotes">
+  <div id="randomQuotes">
 
-      <!--quotes here-->
+  <!--quotes here-->
 
-    </div>
-
-    <div class="left">
-      <a href=""><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
-    </div><div class="right">
-      <button onclick="newQuote()">New Quote</button>
-    </div>
-    <div class="clear">
-    </div>
   </div>
+
+  <p><button onclick="newQuote()">New Quote</button></p>
+  <p><button id="tweet"><i class="fa fa-twitter-square" aria-hidden="true"></i></button></p>
 
 </body>
 </html>
